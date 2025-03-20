@@ -12,6 +12,13 @@
 </svelte:head>
 
 <h1>Dev</h1>
+<p> Pictures of Dev Team</p>
+<br/>
+
+<img
+src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS648Oo1OpFi3n6Dj3J6xCo9WQDtDTxo6jYbw&s"
+>
+
 <section class="gallery">
   {#if galleryItems.length > 0}
     {#each galleryItems as item (item.id)}

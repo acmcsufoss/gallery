@@ -12,8 +12,11 @@
 </svelte:head>
 
 <!-- TODO: Get random images for base route. -->
-<h1>ACM Gallery</h1>
-<p> Here we will store pictures taken by the marketing team!!</p>
+ <div class="header">
+  <h1>ACM Gallery</h1>
+  <p> Here we will store pictures taken by the marketing team!!</p>
+ </div>
+
 <section class="gallery">
   {#if galleryItems.length > 0}
     {#each data.gallery as item (item.id)}
@@ -34,11 +37,17 @@
 <style>
   .gallery {
     display: flex;
+    background-color: #05A3FF;
     flex-wrap: wrap;
     gap: 1rem;
     align-items: center;
     justify-content: center;
     padding: 100px 0;
+  }
+  .header {
+    background-color: #05A3FF;
+    color: white;
+
   }
   @media (max-width: 640px) {
     iframe {

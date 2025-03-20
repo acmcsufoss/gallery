@@ -1,4 +1,6 @@
-
+<script>
+  import "../styles.css";
+</script>
 <nav class="nav">
   <a href="/">Home</a>
   <a href="/ai">AI</a>
@@ -11,29 +13,35 @@
   <a href="/oss">OSS</a>
 </nav>
 
+
 <main>
   <slot />
 </main>
 
-<style>
+<style> 
   .nav {
     display: flex;
     gap: 1rem;
-    justify-content: space-evenly;
+    align-items: center;
+    justify-content: center;
     padding: 1rem;
     margin: 1px solid;
+    background-color: #05A3FF;
   }
 
   .nav a {
     text-decoration: none;
-    padding: 1rem;
-    color: black;
-    font-size: 1.5rem;
-    border-radius: 25px;
-    background-color: beige;
+    color: rgb(255, 251, 251);
+    padding: 0.25rem;
+    font-size: 0.625rem;
+    border-radius: 1rem;
+    border: 1px solid white;
+    width: 5rem;
+    align-items: center;
+    text-align: center;
   }
 
   .nav a:hover {
-    background-color: white;
+    /* background-color: white; */
   }
 </style>
