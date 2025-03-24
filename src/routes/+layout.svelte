@@ -4,7 +4,7 @@
     import {page} from '$app/stores';
 	import type { route } from "../util/routeData";
 
-    const currentRoute = $page.url.pathname as route;
+    $: currentRoute = $page.url.pathname as route;
 
 
 </script>

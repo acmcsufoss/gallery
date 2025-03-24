@@ -13,8 +13,8 @@
 		'/oss'
 	];
 	export let currentRoute: route;
-	const routeName = getTeamnameByRoute(currentRoute);
-	const colors = getColorsByRoute(currentRoute);
+	$: routeName = getTeamnameByRoute(currentRoute);
+	$: colors = getColorsByRoute(currentRoute);
 </script>
 
 <nav>
