@@ -1,3 +1,7 @@
 .main-body {
     font-family: 'Poppins', 'Verdana', 'Helvetica', sans-serif;
 }
+
+body {
+    margin: 0;
+}
