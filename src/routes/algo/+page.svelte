@@ -15,13 +15,10 @@
 <section class="gallery">
   {#if galleryItems.length > 0}
     {#each galleryItems as item (item.id)}
-      <iframe
-        src="https://drive.google.com/file/d/{item.id}/preview"
-        title="Embedded Document"
-        width="640"
-        height="480"
-        allow="autoplay"
-        loading="lazy"
+      <img
+      src="https://drive.google.com/thumbnail?id={item.id}&sz=s1000"
+      title="Embedded Document"
+      alt="img"
       />
     {/each}
   {:else}
@@ -39,7 +36,7 @@
     padding: 100px 0;
   }
   @media (max-width: 640px) {
-    iframe {
+    img {
       margin: 1em;
       height: 280px;
     }
