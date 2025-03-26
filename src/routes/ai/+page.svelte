@@ -22,6 +22,7 @@
       src="https://drive.google.com/thumbnail?id={item.id}&sz=s1000"
       title="Embedded Document"
       alt="img"
+      referrerpolicy="no-referrer"
       />
     {/each}
   {:else}
