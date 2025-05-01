@@ -16,7 +16,12 @@
 <div class="AI-header">
 <h1>   AI</h1><img src="ai-logo.svg" alt="AI Logo" class="logo" />
 </div>
-<p>Welcome to AI! The artificial intelligence team is dedicated to providing accessible information about artificial intelligence and machine learning to all. AI focuses on fun projects geared towards beginners in the field.</p>
+
+<p>
+  Welcome to AI! The artificial intelligence team is dedicated to providing accessible information
+  about artificial intelligence and machine learning to all. AI focuses on fun projects geared 
+  towards beginners in the field.
+</p>
 
 
 <hr class="divider" />
@@ -43,6 +48,7 @@
   body {
     background-color: #35E792;
   } 
+
   .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -102,5 +108,6 @@
   width: 500px;
   height: auto;
   }
+  
 </style>
   
