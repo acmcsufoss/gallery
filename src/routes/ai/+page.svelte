@@ -14,7 +14,7 @@
 
 <body>
 <div class="AI-header">
-<h1>   AI</h1><img src="ai-logo.svg" alt="AI Logo" class="logo" />
+<h1>AI</h1><img src="ai-logo.svg" alt="AI Logo" class="logo" />
 </div>
 
 <p>
@@ -70,6 +70,7 @@
   .AI-header h1 {
   font-size: 4rem;
   margin: 0;
+  margin-left: 4rem;
   font-family: 'Poppins', sans-serif;
   }
 
@@ -84,14 +85,8 @@
   }
 
   .logo {
-  width: 100px;
-  height: 100px;
-  }
-  @media (max-width: 640px) {
-    img {
-      margin: 1em;
-      height: 280px;
-    }
+  width: 150px;
+  height: 150px;
   }
 
   .divider {
@@ -108,6 +103,13 @@
   width: 500px;
   height: auto;
   }
-  
+
+  @media (max-width: 640px) {
+    img {
+      margin: 1em;
+      height: 280px;
+    }
+  }
+
 </style>
   

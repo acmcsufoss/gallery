@@ -14,7 +14,7 @@
 
 <body>
 <div class="Design-header">
-<h1>   Design</h1> <img src="design-logo.svg" alt="Design Logo" class="logo" />
+<h1>Design</h1> <img src="design-logo.svg" alt="Design Logo" class="logo" />
 </div>
 
 <p>
@@ -71,6 +71,7 @@
   .Design-header h1 {
   font-size: 4rem;
   margin: 0;
+  margin-left: 4rem;
   font-family: 'Poppins', sans-serif;
   }
 
@@ -85,14 +86,8 @@
   }
 
   .logo {
-  width: 100px;
-  height: 100px;
-  }
-  @media (max-width: 640px) {
-    img {
-      margin: 1em;
-      height: 280px;
-    }
+  width: 150px;
+  height: 150px;
   }
 
   .divider {
@@ -108,6 +103,13 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 500px;
     height: auto;
+  }
+
+  @media (max-width: 640px) {
+    img {
+      margin: 1em;
+      height: 280px;
+    }
   }
 
 </style>
