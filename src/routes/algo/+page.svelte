@@ -95,6 +95,15 @@ body {
     border: 4px double #f8f8f8;
     border-radius: 8px;
 }
+
+.gallery img {
+  border: 4px solid #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 500px;
+  height: auto;
+  }
+
 .title {
   display: flex;
   flex-direction: row;
