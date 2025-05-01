@@ -12,53 +12,103 @@
 </svelte:head>
 
 <!-- TODO: Get random images for base route. -->
+<!-- Can we make this into a component??-->
 <body>
-  <section class="header">
-    <img src='acm_logo.png' alt="ACM CSUF logo"/>
-    <h1>ACM Gallery</h1>
-    <p> Here we will store pictures taken by the marketing team!!</p>
-  </section>
+  <div class="header">
+  <h1>Association for Computing Machinery</h1> <img src="acm-logo.svg" alt="ACM Logo" class="logo" />
+  </div>
+  
+  <p>
+    Welcome to the largest Computer Science community at CSUF! Our goal is to expose passionate people of all levels to grow their skills in a collaborative community.
+  </p>
+  
+  
+  <hr class="divider" />
+  
+  
   <section class="gallery">
     {#if galleryItems.length > 0}
-      {#each data.gallery as item (item.id)}
-        <iframe
-          src="https://drive.google.com/file/d/{item.id}/preview"
-          title="Embedded Document"
-          width="640"
-          height="480"
-          allow="autoplay"
-          loading="lazy"
+      {#each galleryItems as item (item.id)}
+        <img
+        src="https://drive.google.com/thumbnail?id={item.id}&sz=s1000"
+        title="Embedded Document"
+        alt="img"
+        referrerpolicy="no-referrer"
         />
       {/each}
     {:else}
-    <p>No pictures here yet! 😔 </p>
-  {/if}
+      <p>No pictures here yet! 😔 </p>
+    {/if}
   </section>
-</body>
-
-
-
-
-<style>
-  * {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: white;
-  }
-  body {
-    background-color: #0025ac;
-  }
-  .gallery {
+  </body>
+  
+  <style>
+  
+    body {
+      background-color: #005a71;
+    } 
+    
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 0;
+      background-color: #005a71;
+    }
+  
+    .header {
+    padding-top: 2rem;
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
     align-items: center;
     justify-content: center;
-    padding: 100px 0;
-  }
-  @media (max-width: 640px) {
-    img {
-      margin: 1em;
-      height: 280px;
+    gap: 10px;
     }
-  }
-</style>
+  
+    .header h1 {
+    font-size: 4rem;
+    margin: 0;
+    margin-left: 4rem;
+    font-family: 'Poppins', sans-serif;
+    }
+  
+  
+    p {
+    text-align: center;
+    font-size: 1.75rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    font-family: 'Poppins', sans-serif;
+    }
+  
+    .logo {
+    width: 150px;
+    height: 150px;
+    }
+  
+    .divider {
+    border: none;
+    border-top: 2px solid #FFFFFF;
+    width: 80%;
+    margin: 2rem auto;
+    }
+  
+    .gallery img {
+      border: 4px solid #FFFFFF;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 500px;
+      height: auto;
+    }
+  
+    @media (max-width: 640px) {
+      img {
+        margin: 1em;
+        height: 280px;
+      }
+    }
+  
+  </style>
+  

@@ -5,7 +5,7 @@ May be useful for anything that dynamically changes depending on the current rou
 */
 
 
-export type route =
+export type Route =
 	| '/'
 	| '/algo'
 	| '/ai'
@@ -15,51 +15,67 @@ export type route =
 	| '/oss'
 	| '/general'
 	| '/icpc'
-	| '/nodebuds';
 
-type RouteColorPalette = {
+type RouteMeta = {
+	name: string;
 	primaryColor: string;
 	secondaryColor: string;
-}
+};
 
-
-// TODO: Add color pallete for the rest of the routes
-export const getColorsByRoute = (route: route): RouteColorPalette => {
-	switch (route) {
-		case '/':
-			return { primaryColor: '#1E6CFF', secondaryColor: '#082863' };
-		case '/algo':
-			return { primaryColor: '#AF3FFF', secondaryColor: '#AF3FE0' };
-		case '/oss':
-			return { primaryColor: '#0EAC90', secondaryColor: '#11D4B1' };
-		default:
-			return { primaryColor: '#1E6CFF', secondaryColor: '#082863' };
+const routeInfo: Record<Route, RouteMeta> = {
+	'/': {
+		name: 'Home',
+		primaryColor: '#1E6CFF',
+		secondaryColor: '#082863'
+	},
+	'/algo': {
+		name: 'Algo',
+		primaryColor: '#AF3FFF',
+		secondaryColor: '#AF3FE0'
+	},
+	'/ai': {
+		name: 'AI',
+		primaryColor: '#21d19f',
+		secondaryColor: '#22e3ac'
+	},
+	'/design': {
+		name: 'Design',
+		primaryColor: '#fc3263',
+		secondaryColor: '#75172f'
+	},
+	'/dev': {
+		name: 'Dev',
+		primaryColor: '#2341a1',
+		secondaryColor: '#335ee8'
+	},
+	'/game-dev': {
+		name: 'Game Dev',
+		primaryColor: '#d41153',
+		secondaryColor: '#f71461'
+	},
+	'/oss': {
+		name: 'OSS',
+		primaryColor: '#0EAC90',
+		secondaryColor: '#11D4B1'
+	},
+	'/general': {
+		name: 'General',
+		primaryColor: '#1E6CFF',
+		secondaryColor: '#082863'
+	},
+	'/icpc': {
+		name: 'ICPC',
+		primaryColor: '#c2590c',
+		secondaryColor: '#c76116'
 	}
 };
 
-export const getTeamnameByRoute = (route: route): string => {
-	switch (route) {
-		case '/':
-			return 'Home';
-		case '/algo':
-			return 'Algo';
-		case '/ai':
-			return 'AI';
-		case '/design':
-			return 'Design';
-		case '/dev':
-			return 'Dev';
-		case '/game-dev':
-			return 'Game Dev';
-		case '/oss':
-			return 'OSS';
-		case '/general':
-			return 'General';
-		case '/icpc':
-			return 'ICPC';
-		case '/nodebuds':
-			return 'Node Buds';
-		default:
-			return 'Home';
-	}
+// Reusable accessors
+export const getColorsByRoute = (route: Route) => {
+	const { primaryColor, secondaryColor } = routeInfo[route] ?? routeInfo['/'];
+	return { primaryColor, secondaryColor };
+};
+
+export const getTeamnameByRoute = (route: Route) => {
+	return routeInfo[route]?.name ?? 'Home';
 };

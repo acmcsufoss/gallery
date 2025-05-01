@@ -10,7 +10,7 @@
 
 </script>
 <Navbar currentRoute={currentRoute}/>
-<Content/>
+<!-- <Content/> -->
 
 <main>
     <slot />

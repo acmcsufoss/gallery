@@ -12,44 +12,18 @@
   <title>Gallery | Algo</title>
 </svelte:head>
 
+
 <body>
+<div class="header">
+<h1>Algo</h1> <img src="algo-logo.svg" alt="Algo Logo" class="logo" />
+</div>
+
+<p>
+  Welcome to Algo! Refine your knowledge of Algorithms used for FAANG interviews.
+</p>
 
 
-  <h1>  
-    <div class="title">
-
-      <div class = text-title>
-        <div>Algo</div>
-      </div>
-      <!--
-      <section class = img-title>
-        <div>Algo</div>
-        </section>
-      -->
-      <div>
-      <img class = "img1" src="https://sigmawire.net/i/03/FwxcBf.png" 
-      style="width:110px" alt=Algo>
-      </div>
-
-    </div>
-    
-  </h1> 
-
-  <h2 class = "description">
-    
-    Welcome to Algo! In these workshops, you will be reviewing a variety of 
-    Data Structure concepts (Concepts you will learn in CPSC 131 if you have not taken 
-    this class yet.) and Dynamic Programming concepts and get a chance to practice them with Leetcode style questions!
-    
-   
-
-  </h2>
-
-  
-
-
-
-
+<hr class="divider" />
 
 
 <section class="gallery">
@@ -68,65 +42,73 @@
 </section>
 </body>
 
-
-
 <style>
- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700');
 
-* {
-   font-family: 'Poppins', sans-serif; 
-}
-body {
-  background-color: #af3fff;
-} 
-.description{
-  border: 4px solid #f8f8f8;
-  border-radius: 8px;
-  color:#f8f8f8;
-}
-
-.gallery {
+  body {
+    background-color: #5b2482;
+  } 
+  
+  .gallery {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     align-items: center;
     justify-content: center;
-    padding: 100px 0;
-    border: 4px double #f8f8f8;
-    border-radius: 8px;
-}
-
-.gallery img {
-  border: 4px solid #FFFFFF;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 500px;
-  height: auto;
+    padding: 2rem 0;
+    background-color: #5b2482;
   }
 
-.title {
+  .header {
+  padding-top: 2rem;
   display: flex;
-  flex-direction: row;
-  margin-left: 45%;
-  margin-right: 50%;
-}
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  }
 
-.img1 {
- 
-  width: 110px;
+  .header h1 {
+  font-size: 4rem;
+  margin: 0;
+  margin-left: 4rem;
+  font-family: 'Poppins', sans-serif;
+  }
 
-} .text-title{
- padding-top:30px;
- color:#f8f8f8;
- font-family: 'Poppins', sans-serif; 
-}
 
+  p {
+  text-align: center;
+  font-size: 1.75rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  font-family: 'Poppins', sans-serif;
+  }
+
+  .logo {
+  width: 150px;
+  height: 150px;
+  }
+
+  .divider {
+  border: none;
+  border-top: 2px solid #FFFFFF;
+  width: 80%;
+  margin: 2rem auto;
+  }
+
+  .gallery img {
+    border: 4px solid #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    height: auto;
+  }
 
   @media (max-width: 640px) {
     img {
       margin: 1em;
       height: 280px;
     }
-}
+  }
+
 </style>
   

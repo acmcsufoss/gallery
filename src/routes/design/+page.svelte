@@ -13,7 +13,7 @@
 
 
 <body>
-<div class="Design-header">
+<div class="header">
 <h1>Design</h1> <img src="design-logo.svg" alt="Design Logo" class="logo" />
 </div>
 
@@ -60,7 +60,7 @@
     background-color: #ff406e;
   }
 
-  .Design-header {
+  .header {
   padding-top: 2rem;
   display: flex;
   align-items: center;
@@ -68,7 +68,7 @@
   gap: 10px;
   }
 
-  .Design-header h1 {
+  .header h1 {
   font-size: 4rem;
   margin: 0;
   margin-left: 4rem;

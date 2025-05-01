@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { getColorsByRoute, getTeamnameByRoute, type route } from '../util/routeData';
-	const routes: route[] = [
+	import { getColorsByRoute, getTeamnameByRoute, type Route } from '../util/routeData';
+	const routes: Route[] = [
 		'/ai',
 		'/algo',
 		'/design',
@@ -9,10 +9,9 @@
 		'/game-dev',
 		'/general',
 		'/icpc',
-		'/nodebuds',
 		'/oss'
 	];
-	export let currentRoute: route;
+	export let currentRoute: Route;
 	$: routeName = getTeamnameByRoute(currentRoute);
 	$: colors = getColorsByRoute(currentRoute);
 </script>
@@ -40,7 +39,7 @@
 <style>
 	nav {
 		display: flex;
-		width: 100vw;
+		width: 100%;
 		flex-direction: column;
 		justify-content: center;
 		align-items: start;
