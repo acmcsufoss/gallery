@@ -44,7 +44,7 @@
 			{:else}
 				<div class="empty-state">
 					<h3>No pictures here yet!</h3>
-					<p>Check back soon for amazing photos from {team.displayName} events �</p>
+					<p>Check back soon for amazing photos from {team.displayName} events!</p>
 				</div>
 			{/if}
 		</div>
@@ -246,19 +246,32 @@
 	.empty-state {
 		text-align: center;
 		padding: 4rem 2rem;
-		color: rgba(255, 255, 255, 0.7);
 		grid-column: 1 / -1;
+		position: relative;
+		z-index: 10;
+		background: rgba(255, 255, 255, 0.15);
+		backdrop-filter: blur(10px);
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		border-radius: 20px;
+		margin: 2rem auto;
+		max-width: 600px;
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 	}
 
 	.empty-state h3 {
-		font-size: 1.5rem;
+		font-size: 1.8rem;
 		margin-bottom: 1rem;
-		font-weight: 500;
+		font-weight: 600;
+		color: white;
+		text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 	}
 
 	.empty-state p {
-		font-size: 1rem;
+		font-size: 1.1rem;
 		margin: 0;
+		color: rgba(255, 255, 255, 0.9);
+		text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+		line-height: 1.5;
 	}
 
 	@media (max-width: 768px) {
