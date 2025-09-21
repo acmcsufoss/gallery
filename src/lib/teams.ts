@@ -24,9 +24,9 @@ export const teams: Record<string, TeamConfig> = {
   },
   'oss': {
     slug: 'oss',
-    name: 'OSS',
-    displayName: 'Open Source Software',
-    description: 'Take off into the world of collaborative Open Source Software',
+    name: 'OS',
+    displayName: 'Open Source',
+    description: 'Take off into the world of collaborative Open Source software development',
     logo: 'oss-logo.svg',
     logoAlt: 'OSS Logo',
     primaryColor: '#0EAC90',
@@ -39,8 +39,8 @@ export const teams: Record<string, TeamConfig> = {
     description: 'Level up your game development skills at the Game Dev hub',
     logo: 'gamedev-logo.svg',
     logoAlt: 'gamedev-Logo',
-    primaryColor: '#d41153',
-    secondaryColor: '#f71461'
+    primaryColor: '#fc3263',
+    secondaryColor: '#75172f'
   },
   'design': {
     slug: 'design',
