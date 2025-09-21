@@ -1,16 +1,10 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { getColorsByRoute, getTeamnameByRoute, type Route } from '../util/routeData';
-	const routes: Route[] = [
-		'/ai',
-		'/algo',
-		'/design',
-		'/dev',
-		'/game-dev',
-		'/general',
-		'/icpc',
-		'/oss'
-	];
+	import { getAllTeamSlugs } from '$lib/teams';
+
+	const teamSlugs = getAllTeamSlugs();
+	const routes: Route[] = ['/', ...teamSlugs.map((slug) => `/${slug}`)];
 	export let currentRoute: Route;
 	$: routeName = getTeamnameByRoute(currentRoute);
 	$: colors = getColorsByRoute(currentRoute);
@@ -27,9 +21,18 @@
 	</div>
 	<div class="links-container" style="background-color: {colors.secondaryColor}">
 		{#each routes as route}
-			<a href={route} class="link" class:link-active={$page.url.pathname === route}
-				>{getTeamnameByRoute(route)}</a
-			>
+			{#if route === '/'}
+				<a href={route} class="link" class:link-active={$page.url.pathname === route}
+					>{getTeamnameByRoute(route)}</a
+				>
+			{:else}
+				<a
+					href={route}
+					class="link"
+					class:link-active={$page.url.pathname === route}
+					data-sveltekit-reload>{getTeamnameByRoute(route)}</a
+				>
+			{/if}
 		{/each}
 	</div>
 	<!-- TODO: Make navbar responsive by implementing mobile version of navbar, 

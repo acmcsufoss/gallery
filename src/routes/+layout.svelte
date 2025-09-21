@@ -1,17 +1,15 @@
 <script lang="ts">
-	import Navbar from "../components/Navbar.svelte";
-  import Content from "../components/Content.svelte";
-  import '../styles.css'
-  import {page} from '$app/stores';
-	import type { route } from "../util/routeData";
+	import Navbar from '../components/Navbar.svelte';
+	import '../styles.css';
+	import { page } from '$app/stores';
+	import type { Route } from '../util/routeData';
 
-    $: currentRoute = $page.url.pathname as route;
-
-
+	$: currentRoute = $page.url.pathname as Route;
 </script>
-<Navbar currentRoute={currentRoute}/>
+
+<Navbar {currentRoute} />
 <!-- <Content/> -->
 
 <main>
-    <slot />
+	<slot />
 </main>

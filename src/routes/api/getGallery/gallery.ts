@@ -11,7 +11,7 @@ export async function getGallery(folderName:string): Promise<Gallery> {
     home: GDRIVE_GALLERY_FOLDER_ID_HOME,
     oss: GDRIVE_GALLERY_FOLDER_ID_OSS,
     general: GDRIVE_GALLERY_FOLDER_ID_GENERAL,
-    game_dev: GDRIVE_GALLERY_FOLDER_ID_GAME_DEV,
+    'game-dev': GDRIVE_GALLERY_FOLDER_ID_GAME_DEV,
     dev: GDRIVE_GALLERY_FOLDER_ID_DEV,
     design: GDRIVE_GALLERY_FOLDER_ID_DESIGN,
     algo: GDRIVE_GALLERY_FOLDER_ID_ALGO,
