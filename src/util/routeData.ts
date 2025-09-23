@@ -1,20 +1,6 @@
-/* 
-A utility file to store route data 
-Right now is only used to dynamically change the color of the navbar based on the route
-May be useful for anything that dynamically changes depending on the current route
-*/
+import { teams } from '$lib/teams';
 
-
-export type Route =
-	| '/'
-	| '/algo'
-	| '/ai'
-	| '/design'
-	| '/dev'
-	| '/game-dev'
-	| '/oss'
-	| '/general'
-	| '/icpc'
+export type Route = '/' | string;
 
 type RouteMeta = {
 	name: string;
@@ -22,60 +8,48 @@ type RouteMeta = {
 	secondaryColor: string;
 };
 
-const routeInfo: Record<Route, RouteMeta> = {
+const staticRoutes: Record<string, RouteMeta> = {
 	'/': {
 		name: 'Home',
 		primaryColor: '#1E6CFF',
 		secondaryColor: '#082863'
-	},
-	'/algo': {
-		name: 'Algo',
-		primaryColor: '#AF3FFF',
-		secondaryColor: '#AF3FE0'
-	},
-	'/ai': {
-		name: 'AI',
-		primaryColor: '#21d19f',
-		secondaryColor: '#22e3ac'
-	},
-	'/design': {
-		name: 'Design',
-		primaryColor: '#fc3263',
-		secondaryColor: '#75172f'
-	},
-	'/dev': {
-		name: 'Dev',
-		primaryColor: '#2341a1',
-		secondaryColor: '#335ee8'
-	},
-	'/game-dev': {
-		name: 'Game Dev',
-		primaryColor: '#d41153',
-		secondaryColor: '#f71461'
-	},
-	'/oss': {
-		name: 'OSS',
-		primaryColor: '#0EAC90',
-		secondaryColor: '#11D4B1'
-	},
-	'/general': {
-		name: 'General',
-		primaryColor: '#1E6CFF',
-		secondaryColor: '#082863'
-	},
-	'/icpc': {
-		name: 'ICPC',
-		primaryColor: '#c2590c',
-		secondaryColor: '#c76116'
 	}
 };
 
-// Reusable accessors
-export const getColorsByRoute = (route: Route) => {
-	const { primaryColor, secondaryColor } = routeInfo[route] ?? routeInfo['/'];
-	return { primaryColor, secondaryColor };
+const getTeamSlugFromRoute = (route: string): string | null => {
+	const match = route.match(/^\/([^\/]+)$/);
+	if (match && match[1] in teams) {
+		return match[1];
+	}
+	return null;
 };
 
-export const getTeamnameByRoute = (route: Route) => {
-	return routeInfo[route]?.name ?? 'Home';
+export const getColorsByRoute = (route: Route): { primaryColor: string; secondaryColor: string } => {
+	if (typeof route === 'string' && route in staticRoutes) {
+		return staticRoutes[route];
+	}
+	
+	const teamSlug = getTeamSlugFromRoute(route as string);
+	if (teamSlug && teamSlug in teams) {
+		const team = teams[teamSlug];
+		return { 
+			primaryColor: team.primaryColor, 
+			secondaryColor: team.secondaryColor 
+		};
+	}
+	
+	return staticRoutes['/'];
+};
+
+export const getTeamnameByRoute = (route: Route): string => {
+	if (typeof route === 'string' && route in staticRoutes) {
+		return staticRoutes[route].name;
+	}
+	
+	const teamSlug = getTeamSlugFromRoute(route as string);
+	if (teamSlug && teamSlug in teams) {
+		return teams[teamSlug].name;
+	}
+	
+	return 'Home';
 };
