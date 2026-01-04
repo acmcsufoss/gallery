@@ -3,33 +3,39 @@
 ## Developing
 
 You can clone this repository from your command line by copying the repository link:
-```bash 
+
+```bash
 https://github.com/acmcsufoss/acm-gallery.git
 ```
+
 <br>
 Once you've copied the repository link you can then run the clone command:
 
 ```bash
 git clone https://github.com/acmcsufoss/gallery-acm.git
 ```
+
 <br>
 You can then go to the directory of the project with the cd command: <br>
 
 ```bash
-cd gallery-acm 
+cd gallery-acm
 ```
+
 <br>
 And if you're using VScode open the project with the command: <br>
 
 ```bash
 code .
 ```
+
 <br>
 Once you've opened the project you can install dependencies with:  <br>
 
-```bash 
+```bash
 `npm install` (or `pnpm install` or `yarn`)
 ```
+
 <br>
 To start a development server: <br>
 
