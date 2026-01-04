@@ -1,57 +1,38 @@
-# Gallery-ACM 🖼️
+# ACM Gallery 🖼️
 
-## Developing
+## Getting Started
 
-You can clone this repository from your command line by copying the repository link:
-
+1. Clone and enter the repo:
 ```bash
-https://github.com/acmcsufoss/acm-gallery.git
+git clone https://github.com/acmcsufoss/gallery.git
+cd gallery
 ```
 
-<br>
-Once you've copied the repository link you can then run the clone command:
-
+2. Install dependencies with Bun:
+> If you don't have Bun, install it here -> [bun.com/docs/installation](https://bun.com/docs/installation)
 ```bash
-git clone https://github.com/acmcsufoss/gallery-acm.git
+bun install
 ```
 
-<br>
-You can then go to the directory of the project with the cd command: <br>
-
+3. Create a `.env` file:
 ```bash
-cd gallery-acm
+cp .env.example .env
 ```
 
-<br>
-And if you're using VScode open the project with the command: <br>
-
+4. Start the dev server
 ```bash
-code .
-```
-
-<br>
-Once you've opened the project you can install dependencies with:  <br>
-
-```bash
-`npm install` (or `pnpm install` or `yarn`)
-```
-
-<br>
-To start a development server: <br>
-
-```bash
-npm run dev
+bun run dev
 
 # or start the server and open the app in a new browser tab
-npm run dev -- --open
+bun run dev -- --open
 ```
 
 ## Building
 
-To create a production version of your app:
-
+To create a production version of your app (make sure this works before
+submitting changes!):
 ```bash
-npm run build
+bun run build
 ```
 
-You can preview the production build with `npm run preview`.
+You can preview the production build with `bun run preview`.
