@@ -24,20 +24,22 @@ const getTeamSlugFromRoute = (route: string): string | null => {
 	return null;
 };
 
-export const getColorsByRoute = (route: Route): { primaryColor: string; secondaryColor: string } => {
+export const getColorsByRoute = (
+	route: Route
+): { primaryColor: string; secondaryColor: string } => {
 	if (typeof route === 'string' && route in staticRoutes) {
 		return staticRoutes[route];
 	}
-	
+
 	const teamSlug = getTeamSlugFromRoute(route as string);
 	if (teamSlug && teamSlug in teams) {
 		const team = teams[teamSlug];
-		return { 
-			primaryColor: team.primaryColor, 
-			secondaryColor: team.secondaryColor 
+		return {
+			primaryColor: team.primaryColor,
+			secondaryColor: team.secondaryColor
 		};
 	}
-	
+
 	return staticRoutes['/'];
 };
 
@@ -45,11 +47,11 @@ export const getTeamnameByRoute = (route: Route): string => {
 	if (typeof route === 'string' && route in staticRoutes) {
 		return staticRoutes[route].name;
 	}
-	
+
 	const teamSlug = getTeamSlugFromRoute(route as string);
 	if (teamSlug && teamSlug in teams) {
 		return teams[teamSlug].name;
 	}
-	
+
 	return 'Home';
 };
